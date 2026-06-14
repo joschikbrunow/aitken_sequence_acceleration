@@ -9,7 +9,7 @@ The interactive visualization enables direct comparison of the original sequence
 
 ## Aitkens-delta-squared-method
 
-It can be shown that, if a sequence $A_m$ converges linearily to the limit $A\in\mathbb{R}$, the Aitken-delta-square-sequence
+It can be shown that, if a sequence $A_m$ converges linearily to the limit $A\in ℝ$, the Aitken-delta-square-sequence
 
 $$
 \hat{A}_m:=A_m-\frac{(\Delta A_m)^2}{\Delta^2A_m}
