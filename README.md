@@ -12,13 +12,13 @@ The interactive visualization enables direct comparison of the original sequence
 It can be shown that, if a sequence $A_m$ converges linearily to the limit $A\in\mathbb{R}$, the Aitken-delta-square-sequence
 
 $$
-\hat{A}_m:=A_m-\frac{(\delta A_m)^2}{\delta^2A_m}
+\hat{A}_m:=A_m-\frac{(\Delta A_m)^2}{\Delta^2A_m}
 $$
 
 with
 
 $$
-\delta A_m:=A_{m+1}-A_m,\quad\delta^2A_m:=\delta(\delta A_m)
+\Delta A_m:=A_{m+1}-A_m,\quad\Delta^2A_m:=\Delta(\Delta A_m)
 $$
 
 converges against the same limit $A$ quicker in the sence that $\hat{A}_m-A=o(A_m-A).$
