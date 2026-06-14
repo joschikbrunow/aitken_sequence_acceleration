@@ -40,28 +40,28 @@ Non-linear convergent sequences on the other hand show mixed behaviour. Some of 
 
 **Working sequences**
 
-$A_m=\frac{1}{m}$
+#### $A_m=\frac{1}{m}$
 The first iteration of the Aitken-method is already closer to the limit than the original sequence. The third iteration is so close to the limit that the lines start to overlap:
 ![A_m = 1/m](pictures/1_m.png)
 
-$x=\cos(x)$
+#### $x=\cos(x)$
 The fixed-point iteration with the Aitken-method is much closer to the limit than the recursive sequence:
 ![x = cos(x)](pictures/fixed_point_cos(x).png)
 
 **Problematic sequences**
 
-$A_m=1-0.7^m+\frac{1}{m}$
+#### $A_m=1-0.7^m+\frac{1}{m}$
 There are a lot of spikes, but the Aitken-method seems to converge a little faster in the end:
 ![A_m = 1 - 0.7^m + 1/m](pictures/spikes.png)
 
 Plotting the last Aitken-sequence shows that the comvergence is not that much faster and does not justify the additional calculation time:
 ![A_m = 1 - 0.7^m + 1/m](pictures/spikes_last_aitken.png)
 
-$x=\arctan(x)$
+#### $x=\arctan(x)$
 It converges to the limit at first, but encounters numerical problems when it gets closer to it:
 ![x = arctan(x)](pictures/unstable.png)
 
-$x=\cos(\frac{1}{x})$
+#### $x=\cos(\frac{1}{x})$
 The basic Aitken-method intensifies the chaotic jumps:
 ![x = cos(1/x)](pictures/cos(1_x)normal.png)
 
