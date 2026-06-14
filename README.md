@@ -1,15 +1,15 @@
-# Implementation of the Aitken-delta-square-mathod to accelerate convergence of sequences
+# Implementation of the Aitken delta-squared method to accelerate convergence of sequences
 
 ## Overview
 
-This project implements the Aitken-delta-square-mathod in order to show it accelerates the convergence of some explicit and recursive sequences and series.
+This project implements the Aitken delta-squared method in order to show it accelerates the convergence of some explicit and recursive sequences and series.
 
 The interactive visualization enables direct comparison of the original sequence with the Aitken-sequences with a slideshow that can be easily configured when using the class.
 
 
-## Aitkens-delta-squared-method
+## Aitken delta-squared method
 
-It can be shown that, if a sequence $A_m$ converges linearily to the limit $A\in ℝ$, the Aitken-delta-square-sequence
+It can be shown that, if a sequence $A_m$ converges linearly to the limit $A\in ℝ$, the Aitken-delta-square-sequence
 
 $$
 \hat{A}_m:=A_m-\frac{(\Delta A_m)^2}{\Delta^2A_m}
@@ -21,22 +21,22 @@ $$
 \Delta A_m:=A_{m+1}-A_m,\quad\Delta^2A_m:=\Delta(\Delta A_m)
 $$
 
-converges against the same limit $A$ quicker in the sence that $\hat{A}_m-A=o(A_m-A).$
+converges against the same limit $A$ quicker in the sense that $\hat{A}_m-A=o(A_m-A).$
 
 ## Implementation
 
-The method is implemented in a class `Sequence_Aitken`, which manages the computation of the original sequence, the Aitken-delta-square-method and the visualiziation of the results.
+The method is implemented in a class `Sequence_Aitken`, which manages the computation of the original sequence, the Aitken delta-squared method and the visualization of the results.
 
 The version of the Aitken-method for explicit sequences applies the formula mentioned above iteratively on the original sequence and all the emerging sub-sequences until there are not enough terms in the sequences anymore to compute a new sub-sequence.
 
 For recursive sequences you can apply the same method as for explicit sequences, but there is an additional variation of the Aitken-method for fixed-point problems that uses three values of the recursive sequence to calculate a better one with the Aitken-formula and then use that value as the initial value for the next three recursive steps and so on.
 
-The visualization compares the original sequence with the Aitken-sequences and, if hand over, the real limit of the sequence. This way it is easy to verify if the iterative Aitken-delta-square-method accelerates the convergence of the given sequence. It is possible to create slides with different parameters that manage the visual output of the results. The left and right arrow keys have to be pressed to switch between slides.
+The visualization compares the original sequence with the Aitken-sequences and, if passed, the real limit of the sequence. This way it is easy to verify if the iterative Aitken delta-squared method accelerates the convergence of the given sequence. It is possible to create slides with different parameters that manage the visual output of the results. The left and right arrow keys have to be pressed to switch between slides.
 
 
 ## Results
 
-Sequences that converge linearily will converge faster with the AItken-delta-square-method, this can be shown by proof, and the implementation replicates that behaviour.
+Sequences that converge linearly will converge faster with the Aitken delta-squared method, this can be shown by proof, and the implementation replicates that behaviour.
 
 Non-linear convergent sequences on the other hand show mixed behaviour. Some of them converge faster with the Aitken-method, some show unexpected behaviour like big spikes far out of the bounds of the original sequence or numerical problems due to division with a really small denominator.
 
@@ -58,7 +58,7 @@ The fixed-point iteration with the Aitken-method is much closer to the limit tha
 There are a lot of spikes, but the Aitken-method seems to converge a little faster in the end:
 ![A_m = 1 - 0.7^m + 1/m](pictures/spikes.png)
 
-Plotting the last Aitken-sequence shows that the comvergence is not that much faster and does not justify the additional calculation time:
+Plotting the last Aitken-sequence shows that the convergence is not that much faster and does not justify the additional calculation time:
 ![A_m = 1 - 0.7^m + 1/m](pictures/spikes_last_aitken.png)
 
 #### $x=\arctan(x)$
@@ -120,7 +120,7 @@ In contrast the recursive Aitken-method converges to a fixed-point much faster t
 
    ```python
    slides = [
-       # [title, show limit, show original sequence, normal Aitken*, recursive Aitken]
+       # [title, show limit, show original sequence, normal Aitken *, recursive Aitken]
        # * 0: All, 1: first and last, 2: last, 3: first,
        #   Any other input (like -1) disables normal Aitken in the slides view
        ["cos(x) = x", True, True, -1, False],
